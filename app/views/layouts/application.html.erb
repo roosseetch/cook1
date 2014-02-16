@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cook1</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<ul class="mainmenu">
+	<li>
+		<%= link_to "Main page", controller: "welcome" %>
+	</li>
+	<li>
+		<%= link_to "All caterings", controller: "caterings" %>
+		<ul>
+			<li>
+				<%= link_to "Create new catering", new_catering_path %>
+			</li>
+		</ul>
+	</li>
+</ul>
+
+<%= yield %>
+
+</body>
+</html>

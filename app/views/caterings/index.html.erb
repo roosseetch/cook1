@@ -1,0 +1,33 @@
+<h1>All caterings</h1>
+
+<table>
+	<% @caterings.each do |catering| %>
+		<tr>
+			<td>
+				<table width="100%">
+					<tr>
+						<td>
+							<h2><%= catering.title %></h2>
+							<strong><%= catering.adress %></strong>
+						</td>
+						<td align="right">
+						<font size="2">
+							<strong>
+								<%= catering.phone %><br>
+								Call: <%= catering.work_time %><br>
+								Minimum order: <%= catering.minimum_order %> UAH<br>
+								If no minimum order delivery price: <%= catering.delivery_price %>
+							</strong>
+						</font>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2"><p align="justify"><i><%= catering.description %></i></p></td>
+					</tr>
+				</table>
+				<br>
+				<br>
+			</td>
+		</tr>
+	<% end %>
+</table>

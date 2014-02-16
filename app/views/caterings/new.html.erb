@@ -1,0 +1,47 @@
+<h1>Add new catering</h1>
+
+<%= form_for :post, url: caterings_path do |f| %>
+	<p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+
+	<p>
+    <%= f.label :adress %><br>
+    <%= f.text_field :adress %>
+  </p>
+
+	<p>
+    <%= f.label :phone %><br>
+    <%= f.telephone_field :phone %>
+  </p>
+
+	<p>
+    <%= f.label :email %><br>
+    <%= f.email_field :email %>
+  </p>
+
+	<p>
+    <%= f.label :work_time %><br>
+    <%= f.text_area :work_time %>
+  </p>
+
+	<p>
+    <%= f.label :minimum_order %><br>
+    <%= f.text_field :minimum_order %>
+  </p>
+
+	<p>
+    <%= f.label :delivery_price %><br>
+    <%= f.text_field :delivery_price %>
+  </p>
+
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </p>
+
+  <p>
+    <%= link_to "Cancel, back to list", caterings_path %> <%= f.submit %>
+  </p>
+<% end %>
