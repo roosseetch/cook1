@@ -1,4 +1,4 @@
-<h1>This is catering</h1>
+<h1>Catering</h1>
 
 <p><strong>Title:</strong>
 <%= @catering.title %>
@@ -10,6 +10,10 @@
 
 <p><strong>Phone:</strong>
 <%= @catering.phone %>
+</p>
+
+<p><strong>Email:</strong>
+<%= @catering.email %>
 </p>
 
 <p><strong>Work time:</strong>
@@ -28,3 +32,5 @@
 <%= @catering.description %>
 </p>
 
+<%= link_to 'List all caterings', caterings_path, class: 'btn btn-info' %>
+<%= link_to 'Edit', edit_catering_path(@catering), class: 'btn btn-danger' %>

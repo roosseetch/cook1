@@ -1,28 +1,31 @@
 <h1>All caterings</h1>
+<p align="right"><%= link_to "Create new catering", new_catering_path, class: 'btn btn-success' %></p>
 
-<table>
-	<% @caterings.each do |catering| %>
+<table width="100%">
+	<% @caterings.order("updated_at desc").each do |catering| %>
 		<tr>
 			<td>
 				<table width="100%">
 					<tr>
 						<td>
-							<h2><%= catering.title %></h2>
-							<strong><%= catering.adress %></strong>
+							<h3><%= link_to catering.title, catering %></h3>
+							<strong><%= catering.adress %></strong><br>
+							<%= catering.phone %><br>
+							<%= catering.email %>
 						</td>
 						<td align="right">
 						<font size="2">
 							<strong>
-								<%= catering.phone %><br>
-								Call: <%= catering.work_time %><br>
+								Working hours: <%= catering.work_time %><br>
 								Minimum order: <%= catering.minimum_order %> UAH<br>
 								If no minimum order delivery price: <%= catering.delivery_price %>
 							</strong>
 						</font>
 						</td>
-					</tr>
-					<tr>
-						<td colspan="2"><p align="justify"><i><%= catering.description %></i></p></td>
+						<td width="150" align="right">
+							<%= link_to 'Edit', edit_catering_path(catering), class: 'btn btn-danger' %>
+							<%= link_to 'Delete', catering_path(catering), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary' %>
+						</td>
 					</tr>
 				</table>
 				<br>

@@ -32,14 +32,18 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'bootstrap-sass'
 
-# Use unicorn as the app server
-# gem 'unicorn'
+group :development do
+	gem 'rails_layout'
+end
 
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
+# twitter bootstrap css & javascript toolkit
+gem 'twitter-bootswatch-rails', '~> 3.1.0'
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+# twitter bootstrap helpers gem, e.g., alerts etc...
+gem 'twitter-bootswatch-rails-helpers'
+
+gem 'therubyracer'
+
+gem 'mail_form'

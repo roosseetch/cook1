@@ -1,0 +1,26 @@
+<h1>All offices</h1>
+<p align="right"><%= link_to "Create new office", new_office_path, class: 'btn btn-success' %></p>
+<table width="100%">
+	<% @offices.order("updated_at desc").each do |office| %>
+		<tr>
+			<td>
+				<table width="100%">
+					<tr>
+						<td>
+							<h3><%= link_to office.title, office %></h3>
+							<strong><%= office.adress %></strong><br>
+							<%= office.phone %><br>
+							<%= office.email %>
+						</td>
+						<td width="150" align="right">
+							<%= link_to 'Edit', edit_office_path(office), class: 'btn btn-danger' %>
+							<%= link_to 'Delete', office_path(office), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary' %>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<br>
+			</td>
+		</tr>
+	<% end %>
+</table>
