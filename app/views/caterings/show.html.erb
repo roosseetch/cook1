@@ -24,8 +24,10 @@
 <%= @catering.delivery_price %>
 </p>
 
-<p><strong>Desription:</strong>
-<%= @catering.description %>
+<p><strong>Offices:</strong>
+<% @catering.offices.each do |f| %>
+	<%= link_to f.title, office_path(f.id), class: 'btn btn-primary btn-xs' %>
+<% end %>
 </p>
 
 <p><strong>Desription:</strong>

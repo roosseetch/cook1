@@ -1,15 +1,15 @@
 .row
   .col-lg-6
     .well
-      = form_for @office do |f|
-        - if @office.errors.any?
+      = form_for @catering do |f|
+        - if @catering.errors.any?
           .panel.panel-primary
             .panel-heading
               %h3.panel-title
-                Please fix: #{pluralize(@office.errors.count, "error")}
+                Please fix: #{pluralize(@catering.errors.count, "error")}
             .panel-body
               %ul
-                - @office.errors.full_messages.each do |msg|
+                - @catering.errors.full_messages.each do |msg|
                   %li
                     = msg
         %fieldset
@@ -22,10 +22,13 @@
         .form-group
           = f.email_field :email, class: 'form-control', :placeholder => :email.capitalize
         .form-group
+          = f.text_area :work_time, class: 'form-control', :placeholder => :work_time.capitalize
+        .form-group
+          = f.text_field :minimum_order, class: 'form-control', :placeholder => :minimum_order.capitalize
+        .form-group
+          = f.text_field :delivery_price, class: 'form-control', :placeholder => :delivery_price.capitalize
+        .form-group
           = f.text_area :description, class: 'form-control', :placeholder => :description.capitalize
         .form-group
-          = f.label "Please select Catering"
-          = collection_select(:office, :catering_id, Catering.all, :id, :title, {}, {:class => 'form-control'})
-        .form-group
-          = link_to "Cancel", offices_path, class: 'btn btn-default'
+          = link_to "Cancel", caterings_path, class: 'btn btn-default'
           = f.submit 'Submit', :class => 'btn btn-success'
