@@ -43,6 +43,11 @@
   </p>
 
   <p>
+    <%= f.label "Catering" %><br>
+    <%= collection_select(:office, :catering_id, Catering.all, :id, :title) %>
+  </p>
+
+  <p>
     <%= link_to "Cancel", offices_path, class: 'btn btn-default'  %> 
     <%= f.submit 'Submit', :class => 'btn btn-success' %>
   </p>

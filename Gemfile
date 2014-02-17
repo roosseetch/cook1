@@ -47,3 +47,7 @@ gem 'twitter-bootswatch-rails-helpers'
 gem 'therubyracer'
 
 gem 'mail_form'
+
+gem 'haml-rails'
+
+gem 'simple_form'

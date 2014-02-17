@@ -8,9 +8,12 @@
 					<tr>
 						<td>
 							<h3><%= link_to office.title, office %></h3>
-							<strong><%= office.adress %></strong><br>
-							<%= office.phone %><br>
-							<%= office.email %>
+							<strong>Contact:</strong>
+							<%= office.adress %>, 
+							<%= office.phone %>, 
+							<%= office.email %><br>
+							<strong>Catering:</strong> 
+							<%= link_to office.catering.title, catering_path(office.catering) %>
 						</td>
 						<td width="150" align="right">
 							<%= link_to 'Edit', edit_office_path(office), class: 'btn btn-danger' %>

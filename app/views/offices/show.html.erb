@@ -1,8 +1,4 @@
-<h1>Office</h1>
-
-<p><strong>Title:</strong>
-<%= @office.title %>
-</p>
+<h1>Office "<%= @office.title %>"</h1>
 
 <p><strong>Adress:</strong>
 <%= @office.adress %>
@@ -18,6 +14,10 @@
 
 <p><strong>Desription:</strong>
 <%= @office.description %>
+</p>
+
+<p><strong>Catering:</strong>
+<%= link_to @office.catering.title, catering_path(@office.catering) %>
 </p>
 
 <%= link_to 'List all offices', offices_path, class: 'btn btn-info' %>
