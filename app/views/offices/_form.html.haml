@@ -1,0 +1,31 @@
+.row
+  .col-lg-6
+    .well
+      = form_for @office, :html => { class: 'bs-example' } do |f|
+        - if @office.errors.any?
+          .panel.panel-primary
+            .panel-heading
+              %h3.panel-title
+                Please fix: #{pluralize(@office.errors.count, "error")}
+            .panel-body
+              %ul
+                - @office.errors.full_messages.each do |msg|
+                  %li
+                    = msg
+        %fieldset
+        .form-group
+          = f.text_field :title, class: 'form-control input-sm', :placeholder => :title.capitalize
+        .form-group
+          = f.text_field :adress, class: 'form-control input-sm', :placeholder => :adress.capitalize
+        .form-group
+          = f.telephone_field :phone, class: 'form-control input-sm', :placeholder => :phone.capitalize
+        .form-group
+          = f.email_field :email, class: 'form-control input-sm', :placeholder => :email.capitalize
+        .form-group
+          = f.text_area :description, class: 'form-control', :placeholder => :description.capitalize
+        .form-group
+          = f.label "Please select Catering"
+          = collection_select(:office, :catering_id, Catering.all, :id, :title, {}, {:class => 'form-control'})
+        .form-group
+          = link_to "Cancel", offices_path, class: 'btn btn-default'
+          = f.submit 'Submit', :class => 'btn btn-success'

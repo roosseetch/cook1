@@ -31,16 +31,16 @@ end
 
 gem 'bootstrap-sass'
 
-group :development do
+group :development, :test do
 	gem 'rails_layout'
-
-	# Use sqlite3 as the database for Active Record
 	gem 'sqlite3'
+	gem 'therubyracer'
 end
 
 group :production do
 	gem 'pg'
 	gem 'rails_12factor'
+	gem 'therubyracer-heroku'
 end
 
 # twitter bootstrap css & javascript toolkit
@@ -48,8 +48,6 @@ gem 'twitter-bootswatch-rails', '~> 3.1.0'
 
 # twitter bootstrap helpers gem, e.g., alerts etc...
 gem 'twitter-bootswatch-rails-helpers'
-
-gem 'therubyracer'
 
 gem 'mail_form'
 
