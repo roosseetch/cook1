@@ -1,0 +1,21 @@
+%li= link_to "About", controller: "welcome"
+%li.dropdown
+  %a.dropdown-toggle{"data-toggle" => "dropdown", href: ""}
+    Offices
+    %b.caret
+  %ul.dropdown-menu
+    %li= link_to "List all offices", controller: "offices"
+    %li.divider
+    %li.dropdown-header Actions
+    %li= link_to "Create new office", new_office_path
+%li.dropdown
+  %a.dropdown-toggle{"data-toggle" => "dropdown", href: ""}
+    Caterings
+    %b.caret
+  %ul.dropdown-menu
+    %li= link_to "List all caterings", controller: "caterings"
+    %li.divider
+    %li.dropdown-header Actions
+    %li= link_to "Create new catering", new_catering_path
+%li= link_to "Users", controller: "users"
+%li= link_to "Contact us", new_contact_path

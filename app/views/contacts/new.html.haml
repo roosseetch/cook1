@@ -1,21 +1,15 @@
-.container
-  %h1 Contact
-  For hot support, please call:
-  %b+380506372407
-  %br
-  %br
-  %p Please fill out the information below in order to receive a business application
-
-  = form_for @contact do |f|
-
-    %p
-    = f.label :name
-    = f.text_field :name, class: 'form-control input-sm'
-    %p
-    = f.label :email
-    = f.email_field :email, class: 'form-control input-sm'
-    %p
-    = f.label :message
-    = f.text_area :message, class: 'form-control'
-    %p= f.hidden_field(:nickname)
-    = f.button :submit, :class => 'btn btn-success'
+%h1 Contact us
+.row
+	.col-lg-6
+		.well
+			= form_for @contact do |f|
+				%fieldset
+				.form-group
+					= f.text_field :name, class: 'form-control', :placeholder => :title.capitalize
+				.form-group
+					= f.email_field :email, class: 'form-control', :placeholder => :email.capitalize
+				.form-group
+					= f.text_area :message, class: 'form-control', :placeholder => :message.capitalize
+					= f.hidden_field(:nickname)
+				.form-group
+					= f.submit 'Submit', :class => 'btn btn-success'
