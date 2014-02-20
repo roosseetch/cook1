@@ -3,15 +3,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
-
-# Use Uglifier as compressor for JavaScript assets
-# gem 'uglifier', '>= 1.3.0'
-
-# Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
-
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -34,13 +25,20 @@ gem 'bootstrap-sass'
 group :development, :test do
 	gem 'rails_layout'
 	gem 'sqlite3'
-	gem 'therubyracer'
 end
 
 group :production do
 	gem 'pg'
 	gem 'rails_12factor'
-	gem 'therubyracer-heroku'
+end
+
+# Gems used only for assets and not required
+# in production environments by default.
+group :assets do
+  gem 'therubyracer'
+  gem 'sass-rails'
+  gem 'coffee-rails'
+  # gem 'uglifier'
 end
 
 # twitter bootstrap css & javascript toolkit
@@ -54,5 +52,7 @@ gem 'mail_form'
 gem 'haml-rails'
 
 gem 'simple_form'
+
+gem 'devise'
 
 ruby '2.1.0'
